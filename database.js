@@ -2,6 +2,14 @@ import DatabaseError from './DatabaseError.js';
 
 const users = []; // Initalize empty array to hold users
 
+const getAllUsers = () => {
+  if (users.length) {
+    return users;
+  } else {
+    throw new DatabaseError(getAllUsers, 'No users found', 404);
+  }
+};
+
 const addUser = ({ username, password }) => {
   if ((username, password)) {
     users.push({ username, password });
@@ -17,14 +25,6 @@ const getUser = (username) => {
     return foundUser;
   } else {
     throw new DatabaseError(getUser, 'User not found', 404);
-  }
-};
-
-const getAllUsers = () => {
-  if (users.length) {
-    return users;
-  } else {
-    throw new DatabaseError(getAllUsers, 'No users found', 404);
   }
 };
 
