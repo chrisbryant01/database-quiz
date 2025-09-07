@@ -19,11 +19,7 @@ const addUser = ({ username, password }) => {
   if (username && password) {
     users.push({ username, password });
   } else {
-    throw new DatabaseError(
-      addUser,
-      'Unique username and password are required',
-      400
-    );
+    throw new DatabaseError(addUser, 'Username and password are required', 400);
   }
 };
 
