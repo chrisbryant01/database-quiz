@@ -21,11 +21,16 @@ const getUser = (user) => {
 };
 
 const getAllUsers = () => {
-  if (users.length) {
-    return users;
-  } else {
-    throw new DatabaseError(getAllUsers, 'No users found', 404);
-  }
+  // if (users.length) {
+  //   return users;
+  // } else {
+  //   throw new DatabaseError(getAllUsers, 'No users found', 404);
+  // }
+
+  // Example code: You could also write it as a ternary like this - they're functionally equivalent
+  return users.length
+    ? users
+    : new DatabaseError(getAllUsers, 'No users found', 404);
 };
 
 const setPassword = (user, password) => {
