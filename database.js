@@ -11,7 +11,12 @@ const getAllUsers = () => {
 };
 
 const addUser = ({ username, password }) => {
-  if ((username, password)) {
+  const foundUser = users.find((u) => u.username === username); // Check if username already exists
+  if (foundUser) {
+    throw new DatabaseError(addUser, 'Username must be unique', 400);
+  }
+
+  if (username && password) {
     users.push({ username, password });
   } else {
     throw new DatabaseError(
