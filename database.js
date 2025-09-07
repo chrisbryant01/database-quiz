@@ -10,8 +10,6 @@ const addUser = ({ username, password }) => {
   }
 };
 
-console.log(users); // Logging for testing - should remove in production
-
 const getUser = (user) => {
   if (users.find((u) => u.username === user)) {
     // Find user by username
