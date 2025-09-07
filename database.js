@@ -28,8 +28,7 @@ const addUser = ({ username, password }) => {
 };
 
 const getUser = (username) => {
-  // Check if user exists in array
-  const foundUser = users.find((u) => u.username === username);
+  const foundUser = users.find((u) => u.username === username); // Check if username already exists
   if (foundUser) {
     return foundUser;
   } else {
