@@ -37,7 +37,7 @@ const setPassword = (username, password) => {
   if (foundUser) {
     foundUser.password = password;
   } else {
-    throw new DatabaseError(setPassword, `User ${username} not found`, 404); // Use template string ( ` ` NOT ' ') to include username in error message
+    throw new DatabaseError(setPassword, `User ${username} not found`, 404); // Use template string ( ` ` NOT ' ' ) to include username in error message
   }
 };
 
