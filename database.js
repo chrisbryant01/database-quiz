@@ -28,7 +28,7 @@ const getUser = (username) => {
   if (foundUser) {
     return foundUser;
   } else {
-    throw new DatabaseError(getUser, `User '${username}' not found`, 404);
+    throw new DatabaseError(getUser, `User ${username} not found`, 404);
   }
 };
 
