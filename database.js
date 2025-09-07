@@ -10,9 +10,9 @@ const addUser = ({ username, password }) => {
   }
 };
 
-const getUser = (user) => {
+const getUser = (username) => {
   // Check if user exists in array
-  const foundUser = users.find((u) => u.username === user);
+  const foundUser = users.find((u) => u.username === username);
   if (foundUser) {
     return foundUser;
   } else {
@@ -33,8 +33,8 @@ const getAllUsers = () => {
     : new DatabaseError(getAllUsers, 'No users found', 404);
 };
 
-const setPassword = (user, password) => {
-  const foundUser = users.find((u) => u.username === user); // Find user by username
+const setPassword = (username, password) => {
+  const foundUser = users.find((u) => u.username === username); // Find user by username
   if (foundUser) {
     foundUser.password = password;
   } else {
@@ -42,8 +42,8 @@ const setPassword = (user, password) => {
   }
 };
 
-const deleteUser = (user) => {
-  const index = users.findIndex((u) => u.username === user); // Find index of user by username
+const deleteUser = (username) => {
+  const index = users.findIndex((u) => u.username === username); // Find index of user by username
   if (index !== -1) {
     users.splice(index, 1); // Remove user from array
   } else {
