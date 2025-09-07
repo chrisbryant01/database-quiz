@@ -12,6 +12,8 @@ try {
 
   const arr = db.getAllUsers();
   console.log(arr);
+
+  db.addUser({ username: 'error' });
 } catch (err) {
   console.log(err);
   console.log(`${err.func}: ${err.message} - ${err.code}`);
