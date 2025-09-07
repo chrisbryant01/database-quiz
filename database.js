@@ -14,7 +14,7 @@ const addUser = ({ username, password }) => {
   if ((username, password)) {
     users.push({ username, password });
   } else {
-    throw new DatabaseError(addUser, 'Invalid user data', 400);
+    throw new DatabaseError(addUser, 'Error adding user', 400);
   }
 };
 
@@ -33,7 +33,7 @@ const setPassword = (username, password) => {
   if (foundUser) {
     foundUser.password = password;
   } else {
-    throw new DatabaseError(setPassword, 'User not found', 404);
+    throw new DatabaseError(setPassword, 'Invalid user data', 404);
   }
 };
 
@@ -42,7 +42,11 @@ const deleteUser = (username) => {
   if (index !== -1) {
     users.splice(index, 1); // Remove user from array
   } else {
-    throw new DatabaseError(deleteUser, 'User not found', 404);
+    throw new DatabaseError(
+      deleteUser,
+      'User not found. Error deleting user',
+      404
+    );
   }
 };
 
