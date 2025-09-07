@@ -15,7 +15,7 @@ try {
 
   // db.addUser({ username: 'alice', password: 'test1234!' }); // This will throw an error, should be removed
 
-  // db.addUser({ username: 'error' }); // This will throw an error, should be removed
+  db.addUser({ username: 'error' }); // This will throw an error, should be removed
 } catch (err) {
   console.log(`${err.func}: ${err.message} - ${err.code}`);
 }

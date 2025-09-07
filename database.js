@@ -21,7 +21,7 @@ const addUser = ({ username, password }) => {
   } else {
     throw new DatabaseError(
       addUser,
-      'Unique username and valid password are required to add a user',
+      'Unique username and password are required',
       400
     );
   }
