@@ -11,8 +11,8 @@ const getAllUsers = () => {
 };
 
 const addUser = ({ username, password }) => {
-  const foundUser = users.find((u) => u.username === username); // Check if username already exists
-  if (foundUser) {
+  const user = users.find((u) => u.username === username); // Check if username already exists
+  if (user) {
     throw new DatabaseError(addUser, 'Username must be unique', 409);
   }
 
@@ -24,18 +24,18 @@ const addUser = ({ username, password }) => {
 };
 
 const getUser = (username) => {
-  const foundUser = users.find((u) => u.username === username); // Check if user exists in array
-  if (foundUser) {
-    return foundUser;
+  const user = users.find((u) => u.username === username); // Check if user exists in array
+  if (user) {
+    return user;
   } else {
     throw new DatabaseError(getUser, 'User not found', 404);
   }
 };
 
 const setPassword = (username, password) => {
-  const foundUser = users.find((u) => u.username === username); // Find user by username
-  if (foundUser) {
-    foundUser.password = password;
+  const user = users.find((u) => u.username === username); // Find user by username
+  if (user) {
+    user.password = password;
   } else {
     throw new DatabaseError(setPassword, 'User not found', 404);
   }
