@@ -6,7 +6,7 @@ const addUser = ({ username, password }) => {
   if ((username, password)) {
     users.push({ username, password });
   } else {
-    throw new DatabaseError('Username and password are required');
+    throw new DatabaseError(addUser, 'Invalid user data', 400);
   }
 };
 
@@ -17,7 +17,7 @@ const getUser = (user) => {
     // Find user by username
     return users.find((u) => u.username === user);
   } else {
-    throw new DatabaseError('User not found');
+    throw new DatabaseError(getUser, 'User not found', 404);
   }
 };
 
@@ -25,7 +25,7 @@ const getAllUsers = () => {
   if (users) {
     return users;
   } else {
-    throw new DatabaseError('No users found');
+    throw new DatabaseError(getAllUsers, 'No users found', 404);
   }
 };
 
@@ -34,7 +34,7 @@ const setPassword = (user, password) => {
   if (foundUser) {
     foundUser.password = password;
   } else {
-    throw new DatabaseError('User not found');
+    throw new DatabaseError(setPassword, 'User not found', 404);
   }
 };
 
@@ -43,7 +43,7 @@ const deleteUser = (user) => {
   if (index !== -1) {
     users.splice(index, 1); // Remove user from array
   } else {
-    throw new DatabaseError('User not found');
+    throw new DatabaseError(deleteUser, 'User not found', 404);
   }
 };
 
