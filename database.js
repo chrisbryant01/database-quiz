@@ -37,7 +37,7 @@ const setPassword = (username, password) => {
   if (foundUser) {
     foundUser.password = password;
   } else {
-    throw new DatabaseError(setPassword, `User '${username}' not found`, 404);
+    throw new DatabaseError(setPassword, `User ${username} not found`, 404);
   }
 };
 
@@ -46,7 +46,7 @@ const deleteUser = (username) => {
   if (index !== -1) {
     users.splice(index, 1); // Remove user from array
   } else {
-    throw new DatabaseError(deleteUser, `User '${username}' not found`, 404);
+    throw new DatabaseError(deleteUser, `User ${username} not found`, 404);
   }
 };
 
