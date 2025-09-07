@@ -6,7 +6,7 @@ const getAllUsers = () => {
   if (users.length) {
     return users;
   } else {
-    throw new DatabaseError(getAllUsers, 'No users found', 404);
+    throw new DatabaseError(getAllUsers, 'No users exist in the database', 404);
   }
 };
 
@@ -14,7 +14,11 @@ const addUser = ({ username, password }) => {
   if ((username, password)) {
     users.push({ username, password });
   } else {
-    throw new DatabaseError(addUser, 'Error adding user', 400);
+    throw new DatabaseError(
+      addUser,
+      'Username and password are required to add a user',
+      400
+    );
   }
 };
 
@@ -24,7 +28,7 @@ const getUser = (username) => {
   if (foundUser) {
     return foundUser;
   } else {
-    throw new DatabaseError(getUser, 'User not found', 404);
+    throw new DatabaseError(getUser, `User '${username}' not found`, 404);
   }
 };
 
@@ -33,7 +37,7 @@ const setPassword = (username, password) => {
   if (foundUser) {
     foundUser.password = password;
   } else {
-    throw new DatabaseError(setPassword, 'Invalid user data', 404);
+    throw new DatabaseError(setPassword, `User '${username}' not found`, 404);
   }
 };
 
@@ -42,11 +46,7 @@ const deleteUser = (username) => {
   if (index !== -1) {
     users.splice(index, 1); // Remove user from array
   } else {
-    throw new DatabaseError(
-      deleteUser,
-      'User not found. Error deleting user',
-      404
-    );
+    throw new DatabaseError(deleteUser, `User '${username}' not found`, 404);
   }
 };
 
