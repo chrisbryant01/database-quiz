@@ -19,7 +19,7 @@ const addUser = ({ username, password }) => {
   if (username && password) {
     users.push({ username, password });
   } else {
-    throw new DatabaseError(addUser, 'Invalid request', 400);
+    throw new DatabaseError(addUser, 'Bad request', 400);
   }
 };
 
