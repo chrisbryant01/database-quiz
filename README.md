@@ -1,4 +1,4 @@
-# Walkthrough: `database.js`
+# README
 
 ## 1. Importing the Error Class
 
