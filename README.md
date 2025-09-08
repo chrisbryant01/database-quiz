@@ -1,5 +1,7 @@
 # README
 
+Run: `node index.js`
+
 ## 1. Importing the Error Class
 
 ```javascript
