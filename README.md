@@ -1,3 +1,3 @@
 # database-quiz
 
-Run project: `node index.js`
+Run the project with `node index.js` in terminal.
