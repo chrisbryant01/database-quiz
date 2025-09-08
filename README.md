@@ -148,6 +148,4 @@ export { addUser, getAllUsers, setPassword, getUser, deleteUser };
 
 Try writing a new function, `updateUsername(oldName, newName)`, that changes a user’s username if it’s not already taken. Use the patterns above!
 
----
 
-If you have any questions about how a part works, or run into errors, break the function down and log out variables to see what’s happening step by step. That’s how pros do it!
