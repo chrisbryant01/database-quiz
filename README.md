@@ -1,3 +1,3 @@
 # database-quiz
 
-To test run: `node index.js`
+Run project: `node index.js`
