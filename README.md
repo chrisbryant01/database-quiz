@@ -1,9 +1,5 @@
 # Walkthrough: `database.js`
 
-This file is a simple “database” for storing users in memory. It lets you add, find, update, and remove users—no real database required! Here’s how it works, step by step.
-
----
-
 ## 1. Importing the Error Class
 
 ```javascript
